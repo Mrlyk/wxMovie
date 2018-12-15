@@ -1,12 +1,24 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+		"pages/movies/movies"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "Mrlyk",
     "navigationBarTextStyle":"black"
+  },
+	
+	"tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/movies/movies",
+        "text": "电影页面"
+      }
+    ]
   }
 }
