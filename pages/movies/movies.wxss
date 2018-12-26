@@ -1,0 +1,42 @@
+/* 引入模版的样式，这样才能在页面上使用到模版的样式 */
+@import "movie-template/movieList.wxss";
+
+page{
+	height: 100%;
+	background: rgb(245,245,245);
+}
+
+page>view{
+	margin-bottom: 20rpx;
+}
+
+/* 搜索框 */
+.search{
+	padding: 12rpx 10rpx;
+	font-size: 32rpx;
+}
+
+/* 标题 */
+.movieHead {
+	display: flex;
+	background: white;
+	justify-content: space-between;
+	align-items: center;
+	padding: 24rpx 12rpx;
+	color: rgb(111, 111, 111);
+	font-size: 28rpx;
+}
+
+.moreInfo {
+	color: #4169E1;	
+}
+
+.movieBody{
+	display: flex;
+	flex-direction: row;
+	background-color: white;
+	justify-content: space-between;
+	padding: 0 12rpx;
+	padding-bottom: 30rpx;
+}
+

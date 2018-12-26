@@ -1,3 +1,47 @@
+<import src="./movie-template/movieList.wxml" />
+<!-- 搜索框 -->
+<input class="search" placeholder="釜山行" />
+<!-- 正在热映,这三块也可以做成模版 -->
 <view>
-	<text>电影页面</text>
+	<!-- 标题 -->
+	<view class="movieHead">
+		<text>正在热映</text>
+		<text class="moreInfo" catchtap="toMore">更多 ></text>
+	</view>
+
+	<view class="movieBody">
+		<block wx:for="{{nowMovie3}}" wx:for-item="nowMovies" wx:key="key">
+			<template is="movies" data="{{...nowMovies,nowMovieStars}}"></template>
+		</block>
+	</view>
+</view>
+
+<!-- 即将上映 -->
+<view>
+	<view class="movieHead">
+		<text>即将上映</text>
+		<text class="moreInfo">更多 ></text>
+	</view>
+
+	<view class="movieBody">
+		<block wx:for="{{soonMovie3}}" wx:for-item="soonMovies" wx:key="key">
+			<template is="movies" data="{{...soonMovies}}"></template>
+		</block>
+	</view>
+
+</view>
+
+<!-- 电影推荐 -->
+<view>
+	<view class="movieHead">
+		<text>电影Top250</text>
+		<text class="moreInfo">更多 ></text>
+	</view>
+
+	<view class="movieBody">
+		<block wx:for="{{movieTop3}}" wx:for-item="movieTops" wx:key="key">
+			<template is="movies" data="{{...movieTops}}"></template>
+		</block>
+	</view>
+
 </view>

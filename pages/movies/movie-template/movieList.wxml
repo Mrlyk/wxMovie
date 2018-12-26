@@ -1,0 +1,14 @@
+<!-- 评分是使用的豆瓣提供的组件 -->
+<import src="./movieStar.wxml" />
+
+<template name="movies">
+	<!-- 内容 -->
+	<view class="contentInfo" catchtap="toDetail">
+		<image src="{{images.medium}}"></image>
+		<text style="margin:15px 0 12rpx;height: 56rpx;">{{title}}</text>
+
+		<!-- 评分 -->
+		<template is="movieStar" data="{{nowMovieStars}}"></template>
+	</view>
+
+</template>

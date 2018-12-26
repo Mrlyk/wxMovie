@@ -1,7 +1,10 @@
 {
   "pages":[
+		"pages/movies/movies",
     "pages/index/index",
-		"pages/movies/movies"
+    "pages/movies/moreMovies/moreMovies",
+    "pages/movies/moviesDetail/moviesDetail"
+		
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -10,14 +13,21 @@
   },
 	
 	"tabBar": {
+		"color":"#000000",
+		"selectedColor":"#32CD32",
+		"borderStyle":"white",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+				"iconPath":"/images/main1.png",
+				"selectedIconPath":"/images/main2.png"
       },
       {
         "pagePath": "pages/movies/movies",
-        "text": "电影页面"
+        "text": "电影页面",
+				"iconPath":"/images/movie1.png",
+				"selectedIconPath":"/images/movie2.png"
       }
     ]
   }
