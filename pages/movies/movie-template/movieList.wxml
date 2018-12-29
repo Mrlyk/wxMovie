@@ -8,7 +8,7 @@
 		<text style="margin:15px 0 12rpx;height: 56rpx;">{{title}}</text>
 
 		<!-- 评分 -->
-		<template is="movieStar" data="{{nowMovieStars}}"></template>
+		<template is="movieStar" data="{{rating,myStars}}"></template>
 	</view>
 
 </template>

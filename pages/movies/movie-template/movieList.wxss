@@ -8,6 +8,8 @@
 	width: 30%;
 	font-size: 28rpx;
 	color: rgb(121, 121, 121);
+	background-color: white;
+	margin-bottom: 30rpx;
 }
 
 .contentInfo>image{

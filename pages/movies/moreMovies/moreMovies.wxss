@@ -1,1 +1,16 @@
 /* pages/movies/moreMovies/moreMovies.wxss */
+@import "../movie-template/movieList.wxss"
+page{
+	background-color: rgb(244,244,244);
+}
+
+.moreMovieContainer{
+	padding: 10rpx;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.gap{
+	margin-bottom: 30rpx;
+}

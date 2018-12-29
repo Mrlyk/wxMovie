@@ -16,6 +16,11 @@ page>view{
 	font-size: 32rpx;
 }
 
+/* 搜索placeholder样式 */
+.searchP{
+	margin-left: 10rpx;
+}
+
 /* 标题 */
 .movieHead {
 	display: flex;
@@ -37,6 +42,5 @@ page>view{
 	background-color: white;
 	justify-content: space-between;
 	padding: 0 12rpx;
-	padding-bottom: 30rpx;
 }
 

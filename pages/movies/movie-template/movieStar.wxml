@@ -2,18 +2,17 @@
 <template name="movieStar">
 	<view class="score">
 		<!-- 五个星星，循环实星的数量-->
-		<block wx:for="{{}}" wx:key="key">
+		<block wx:for="{{myStars}}" wx:key="key">
 			<image src="/images/icon/star.png"></image>
 		</block>
 		
-		<!-- 循环灰星的数量 -->
-		<block wx:for="{{}}" wx:key="key">
+		<block wx:for="{{5-myStars}}" wx:key="key">
 			<image src="/images/icon/grayStar.png"></image>
 		</block>
 		
+		
 		<!-- 评分 -->
-		<text>{{rating.average}}</text>
-		<text>测试{{nowMovieStars}}</text>
+		<text style="margin-left: 14rpx;">{{rating.average}}</text>
 
 	</view>
 </template>

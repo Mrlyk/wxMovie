@@ -3,13 +3,8 @@ const App = getApp();
 Page({
 	data: {
 		nowMovie3: [],
-		nowMovieStars:[],
-		
 		soonMovie3: [],
-		soonMovieStars:[],
-		
 		movieTop3: [],
-		movieTopStars:[]
 	},
 
 	// 封装一个promise,get方法
@@ -55,53 +50,55 @@ Page({
 
 		// 获得三类电影数据
 
-		this.get(nowMovieUrl).then(res=>{
-			let nowMovieStars = new Array();
-			res.data.subjects.forEach(item=>{
-				nowMovieStars.push(parseInt(item.rating.stars.substring(0,1)))
-			})
-			
+		this.get(nowMovieUrl).then(res => {
+			// let nowMovieStars = new Array();
+			// 新添加一个属性来存放我的星星数
+			res.data.subjects.forEach(item => {
+				item.myStars = parseInt(item.rating.stars.substring(0, 1));
+			});
+
 			this.setData({
 				nowMovie3: res.data.subjects,
-				nowMovieStars: nowMovieStars
+				// nowMovieStars: nowMovieStars
 				// nowMovie3:res.data.subjects
 			});
-			
+
 			return this.get(soonMovieUrl)
-		}).then(res=>{
-			let soonMovieStars = new Array();
-			res.data.subjects.forEach(item=>{
-				soonMovieStars.push(parseInt(item.rating.stars.substring(0,1)))
-			})
+		}).then(res => {
+			res.data.subjects.forEach(item => {
+				item.myStars = parseInt(item.rating.stars.substring(0, 1));
+			});
 			this.setData({
 				soonMovie3: res.data.subjects,
-				soonMovieStars: soonMovieStars
+				
 			});
 			return this.get(MovieTopUrl)
-		}).then(res=>{
-			let movieTopStars = new Array();
-			res.data.subjects.forEach(item=>{
-				movieTopStars.push(parseInt(item.rating.stars.substring(0,1)))
-			})
+		}).then(res => {
+			res.data.subjects.forEach(item => {
+				item.myStars = parseInt(item.rating.stars.substring(0, 1));
+			});
 			this.setData({
 				movieTop3: res.data.subjects,
-				movieTopStars:movieTopStars
 			});
 		})
-		
-
-		// let soonMovieStars = new Array();
-
-
 
 		// 设置评分的星星数量
 	},
 
 
 	toMore(e) {
-		// 跳转到更多页面
+		// 跳转到更多页面,根据不同传过来的值跳转
+		console.log(e);
+		let currentId = e.target.dataset.current;
+		let url = '';
+		switch(currentId){
+			case '0':url = './moreMovies/moreMovies?type=in_theaters';break;
+			case '1':url = './moreMovies/moreMovies?type=coming_soon';break;
+			case '2':url = './moreMovies/moreMovies?type=top250';break;
+			default:url='';break;
+		}
 		wx.navigateTo({
-			url: './moreMovies/moreMovies'
+			url: url
 		})
 	},
 
